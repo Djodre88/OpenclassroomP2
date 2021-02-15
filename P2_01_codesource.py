@@ -50,3 +50,32 @@ datas[6]=pd.text
 category=soup.findChildren('a')
 ct=category[3]
 datas[7]=ct.text
+
+#Review Rating
+One=1
+Two=2
+Three=3
+Four=4
+Five=5
+
+rating=soup.find_all('p')
+star=rating[2].get("class")
+star_rating=star[1]
+
+if star_rating=='One':
+    ratings="'1"+ " / 5'"
+elif star_rating=='Two':
+    ratings="'2 "+ "/5'"
+elif star_rating=='Three':
+    ratings="'3"+ "/ 5'"
+elif star_rating=='Four':
+    ratings="'4"+ "/ 5'"
+else:
+    ratings="'5"+ "/ 5'"
+
+datas[8]=ratings
+
+#Image URL
+img_url=soup.find('img').get("src")
+img_url_str=site_url + str(img_url)[5:]
+datas[9]=img_url_str
