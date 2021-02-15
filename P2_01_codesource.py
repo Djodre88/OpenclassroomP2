@@ -30,3 +30,13 @@ tables=soup.findChildren('table')
 my_table = tables[0]
 rows = my_table.findChildren(['tr'])
 t=['']*len(rows)
+
+i=0
+for row in rows:  
+    cells = row.find('td')
+    t[i]=cells.text
+    i=i+1
+
+datas[3]=t[3]
+datas[4]=t[2]
+datas[5]=t[6]
