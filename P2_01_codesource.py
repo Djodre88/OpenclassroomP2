@@ -24,3 +24,9 @@ datas[1]=upc.text
 #Title
 title=soup.h1
 datas[2]=title.text
+
+#prices
+tables=soup.findChildren('table')
+my_table = tables[0]
+rows = my_table.findChildren(['tr'])
+t=['']*len(rows)
