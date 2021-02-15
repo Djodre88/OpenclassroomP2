@@ -40,3 +40,13 @@ for row in rows:
 datas[3]=t[3]
 datas[4]=t[2]
 datas[5]=t[6]
+
+#product_description
+product_description=soup.findChildren('p')
+pd=product_description[3]
+datas[6]=pd.text
+
+#Category
+category=soup.findChildren('a')
+ct=category[3]
+datas[7]=ct.text
