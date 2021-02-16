@@ -44,7 +44,8 @@ datas[5]=t[6]
 #product_description
 product_description=soup.findChildren('p')
 pd=product_description[3]
-datas[6]=pd.text
+reg_pd=re.sub('[^A-Za-z0-9,.!? ]+', " ",pd.text)
+datas[6]=reg_pd
 
 #Category
 category=soup.findChildren('a')
@@ -52,12 +53,6 @@ ct=category[3]
 datas[7]=ct.text
 
 #Review Rating
-One=1
-Two=2
-Three=3
-Four=4
-Five=5
-
 rating=soup.find_all('p')
 star=rating[2].get("class")
 star_rating=star[1]
