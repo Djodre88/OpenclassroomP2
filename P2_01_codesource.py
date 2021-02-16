@@ -72,7 +72,7 @@ datas[8]=ratings
 
 #Image URL
 img_url=soup.find('img').get("src")
-img_url_str=site_url + str(img_url)[5:]
+img_url_str=site_url + str(img_url)[6:]
 datas[9]=img_url_str
 
 reg_title=re.sub(r'[?|:|.|!|*]',"",title.text)
